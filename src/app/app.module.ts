@@ -7,6 +7,7 @@ import { ListaCursosComponent } from './lista-cursos/lista-cursos.component';
 import { SGestionService } from './ServicioCursos/sgestion.service';
 import { FormularioCursoComponent } from './formulario-curso/formulario-curso.component';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [SGestionService],
   bootstrap: [AppComponent]

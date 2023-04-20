@@ -3,22 +3,24 @@
 </ng-template>
 
 <div *ngIf="sgestion.lista_cursos.length > 0; else vacio">
-  <table>
-    <caption>Lista de cursos</caption>
-    <tr>
-      <th>ID</th>
-      <th>Nombre</th>
-      <th>Duración</th>
-      <th>Nivel</th>
-    </tr>
-    <tr *ngFor="let index of sgestion.lista_cursos">
-      <td>{{index.id}}</td>
-      <td>{{index.nombre}}</td>
-      <td>{{index.duracion}}</td>
-      <td>{{index.nivel}}</td>
-      <button [routerLink]="['/mod-curso',index.id]" routerLinkActive="active" ariaCurrentWhenActive="page">🔧</button>
-      <button [routerLink]="['/mod-curso',index.id,true]" routerLinkActive="active" ariaCurrentWhenActive="page">❌</button>
-    </tr>
+  <h3>Lista de cursos</h3>
+  <table class="table table-striped">
+    <thead>
+      <th scope="col">ID</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Duración</th>
+      <th scope="col">Nivel</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let index of sgestion.lista_cursos">
+        <td scope="row">{{index.id}}</td>
+        <td scope="row">{{index.nombre}}</td>
+        <td scope="row">{{index.duracion}}</td>
+        <td scope="row">{{index.nivel}}</td>
+        <button [routerLink]="['/mod-curso',index.id]" routerLinkActive="active" ariaCurrentWhenActive="page">🔧</button>
+        <button [routerLink]="['/mod-curso',index.id,true]" routerLinkActive="active" ariaCurrentWhenActive="page">❌</button>
+      </tr>
+    </tbody>
   </table>
 </div>
 <button [routerLink]="['/mod-curso']">Añadir curso</button>
